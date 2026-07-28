@@ -1,4 +1,4 @@
-#include <stdio.h>
+// #include <stdio.h>
 
 char *ft_strrev(char *str)
 {
@@ -10,7 +10,7 @@ char *ft_strrev(char *str)
         end++;
     end--;
 
-    while (start < end)
+	while (start < end)
     {
         temp = str[start];
         str[start] = str[end];
@@ -21,8 +21,8 @@ char *ft_strrev(char *str)
     return (str);
 }
 
-int main(void)
+/* int main(void)
 {
 	char str[] = "hello";
 	printf("%s", ft_strrev(str));
-}
+} */
