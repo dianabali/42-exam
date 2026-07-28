@@ -1,8 +1,8 @@
 // Search for a str that is in accept.
 // Stop at the first char that is not.
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
 size_t ft_strspn(const char *s, const char *accept)
 {
@@ -20,7 +20,7 @@ size_t ft_strspn(const char *s, const char *accept)
 	return (i);
 }
 
-int main(void)
+/* int main(void)
 {
 	char s[] = "helloworld";
 	char accept[] = "h";
@@ -28,4 +28,4 @@ int main(void)
 	printf("%lu\n", strspn(s, accept));
 
 	printf("%zu", ft_strspn(s, accept));
-}
+} */
