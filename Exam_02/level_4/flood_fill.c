@@ -1,0 +1,87 @@
+#include "flood_fill.h"
+// #include <stdio.h>
+// #include <stdlib.h>
+
+static void fill(char **tab, t_point size, int x, int y, char target)
+{
+    if (x < 0 || y < 0 || x >= size.x || y >= size.y)
+        return ;
+    if (tab[y][x] != target)
+        return ;
+
+    tab[y][x] = 'F';
+
+    fill(tab, size, x + 1, y, target);
+    fill(tab, size, x - 1, y, target);
+	fill(tab, size, x, y + 1, target);
+	fill(tab, size, x, y - 1, target);
+}
+
+void flood_fill(char **tab, t_point size, t_point begin)
+{
+    char target = tab[begin.y][begin.x];
+    if (target == 'F')
+        return ;
+    fill(tab, size, begin.x, begin.y, target);
+}
+
+
+/* char	**make_area(char **zone, t_point size)
+{
+	char	**new;
+	int		i;
+	int		j;
+
+	new = malloc(sizeof(char *) * size.y);
+	i = 0;
+	while (i < size.y)
+	{
+		new[i] = malloc(size.x + 1);
+		j = 0;
+		while (j < size.x)
+		{
+			new[i][j] = zone[i][j];
+			j++;
+		}
+		new[i][size.x] = '\0';
+		i++;
+	}
+	return (new);
+}
+
+void	print_area(char **area, t_point size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size.y)
+	{
+		printf("%s\n", area[i]);
+		i++;
+	}
+}
+
+int	main(void)
+{
+	t_point	size = {8, 5};
+	char	*zone[] = {
+		"11111111",
+		"10001001",
+		"10010001",
+		"10110001",
+		"11100001"
+	};
+
+	char	**area = make_area(zone, size);
+
+	printf("Before:\n");
+	print_area(area, size);
+
+	t_point	begin = {7, 4};
+	flood_fill(area, size, begin);
+
+	printf("\nAfter:\n");
+	print_area(area, size);
+
+	return (0);
+} */
