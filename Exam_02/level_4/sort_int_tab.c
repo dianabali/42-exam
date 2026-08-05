@@ -1,4 +1,4 @@
-#include <stdio.h>
+// #include <stdio.h>
 
 void	sort_int_tab(int *tab, unsigned int size)
 {
@@ -24,7 +24,7 @@ void	sort_int_tab(int *tab, unsigned int size)
 	}
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int	tab[] = {5, 2, 8, 2, -1, 10, 0};
 	unsigned int	size = 7;
@@ -48,4 +48,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}
+} */
